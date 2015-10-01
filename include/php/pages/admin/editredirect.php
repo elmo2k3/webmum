@@ -92,11 +92,11 @@ Here you can edit a redirect.
 	
 	<tr>
 		<td>
-			<input type="text" name="source" class="textinput" placeholder="Source (single address)" required="required" value="<?php if(isset($source)){echo $source;}?>" autofocus/>
+			<input type="text" name="source" class="textinput" placeholder="Source (single address)" required="required" value="<?php if(isset($source)){echo strip_tags($source);}?>" autofocus/>
 		</td>
 		
 		<td>
-			<textarea name="destination" class="textinput" placeholder="Destination (multiple addresses separated by comma possible)" required="required"><?php if(isset($destination)){echo $destination;} ?></textarea>
+			<textarea name="destination" class="textinput" placeholder="Destination (multiple addresses separated by comma possible)" required="required"><?php if(isset($destination)){echo strip_tags($destination);} ?></textarea>
 		</td>
 	</tr>
 	

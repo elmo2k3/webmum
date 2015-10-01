@@ -11,7 +11,9 @@ else if(isset($_GET['edited']) && $_GET['edited'] == "1"){
 }
 
 
-$sql = "SELECT * FROM `".DBT_ALIASES."` ORDER BY `".DBC_ALIASES_SOURCE."` ASC;";
+#$sql = "SELECT * FROM `".DBT_ALIASES."` ORDER BY `".DBC_ALIASES_SOURCE."` ASC;";
+#$sql = "SELECT * FROM `".DBT_ALIASES."` ORDER BY SUBSTRING(`".DBC_ALIASES_SOURCE."`,(Locate('@',`".DBC_ALIASES_SOURCE."`)+1)), `".DBC_ALIASES_SOURCE."` ASC;";
+$sql = "SELECT * FROM `".DBT_ALIASES."` ORDER BY SUBSTRING(`".DBC_ALIASES_SOURCE."`,(Locate('@',`".DBC_ALIASES_SOURCE."`)+1)), `".DBC_ALIASES_SOURCE."` ASC;";
 
 if(!$result = $db->query($sql)){
 	die('There was an error running the query [' . $db->error . ']');
